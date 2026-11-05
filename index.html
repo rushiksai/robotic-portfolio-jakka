@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rushik Sai Jakka | Robotics Engineer</title>
+  <meta name="description" content="Rushik Sai Jakka — robotics engineer working on 2-DOF and 6-DOF robotic arms at Yardstick Robotics, mobile robotics, ROS 2 and computer vision." />
+  <meta name="theme-color" content="#071230" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23071230'/%3E%3Ctext x='16' y='46' fill='%2360a5fa' font-family='sans-serif' font-size='44'%3Er.%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'; } catch { /* Use the original dark theme when storage is unavailable. */ }
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=order-1" />
+  <link rel="stylesheet" href="./experience.css" />
+  <link rel="stylesheet" href="./refinements.css" />
+  <link rel="stylesheet" href="./editorial.css?v=order-1" />
+  <link rel="stylesheet" href="./cinematic.css?v=delivery-2" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="./script.js?v=order-1" defer></script>
+  <script src="./experience.js" defer></script>
+  <script src="./motion.js?v=cinema-2" defer></script>
+  <script src="./cinematic.js?v=delivery-2" defer></script>
+</head>
+
+<body data-design="editorial">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="#main">Rushik Sai Jakka</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false"><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span id="theme-label">White mode</span></button>
+    <div class="lang-switcher" aria-label="Language">
+      <button id="btn-en" class="lang-btn active" type="button" aria-pressed="true" lang="en">EN</button>
+      <button id="btn-de" class="lang-btn" type="button" aria-pressed="false" lang="de">DE</button>
+    </div>
+    <button id="nav-toggle" class="hamburger" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <ul class="nav-links" id="nav-links" inert>
+      <li><a href="#about-section" data-i18n="nav-about">About Me</a></li>
+      <li><a href="#projects-section" data-i18n="nav-projects">Projects</a></li>
+      <li><a href="#experience" data-i18n="nav-experience">Experience</a></li>
+      <li><a href="#education" data-i18n="nav-education">Education</a></li>
+      <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+      <li><a href="#languages" data-i18n="nav-languages">Languages</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Connect</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <video class="hero-video" id="hero-video" muted loop playsinline preload="metadata" poster="./assets/robot-arm-poster.png" aria-hidden="true" tabindex="-1"><source src="./assets/robot-arm-loop.webm" type="video/webm"></video>
+      <div class="hero-video-shade" aria-hidden="true"></div>
+      <button class="hero-motion-toggle" id="hero-motion-toggle" type="button" hidden>Pause background</button>
+      <div class="hero-content-wrapper section-card">
+        <div class="hero-content">
+          <p data-i18n="hero-greeting">Hello, I am</p>
+          <h1 class="name" id="hero-title"><span>Rushik Sai</span> <span>Jakka</span></h1>
+          <div class="subtitle" data-i18n="hero-subtitle">Sensors | Robotics | Microsystems</div>
+          <p class="hero-role" data-i18n="hero-current-role">Robot Control Software · Yardstick Robotics</p>
+          <p class="hero-summary" data-i18n="hero-summary">Working on 2-DOF and 6-DOF robotic arms, with experience in mobile robotics, ROS 2, and computer vision.</p>
+          <div class="buttons">
+            <a href="#projects-section" class="btn"><span data-i18n="view-projects">View projects</span><span aria-hidden="true">↗</span></a>
+            <a href="./Resume_Jakka_ROS.pdf" class="btn secondary-btn" target="_blank" rel="noopener noreferrer"><span data-i18n="hero-resume">View Resume</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/rushiksaijakka" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i><span>LinkedIn</span></a>
+            <a href="https://github.com/rushiksai" target="_blank" rel="noopener noreferrer"><i data-lucide="github"></i><span>GitHub</span></a>
+          </div>
+        </div>
+        <!-- Previous hero portrait retained as a backup. Restore this block to use rushik-cutout.png.
+        <div class="hero-portrait">
+          <svg viewBox="0 0 420 470" role="img" aria-labelledby="portrait-title">
+            <title id="portrait-title">Portrait of Rushik Sai Jakka</title>
+            <defs>
+              <clipPath id="portrait-clip"><path d="M34 0 H394 V226 C382 324 289 379 148 433 C98 450 55 392 39 324 C32 278 34 238 34 214 Z"/></clipPath>
+            </defs>
+            <path class="portrait-shape" d="M34 214 C34 145 50 131 115 131 H318 C382 131 402 161 394 226 C382 324 289 379 148 433 C98 450 55 392 39 324 C32 278 34 238 34 214 Z"/>
+            <image href="./rushik-cutout.png" x="-16" y="4" width="390" height="450" preserveAspectRatio="xMidYMax slice" clip-path="url(#portrait-clip)"/>
+            <path class="portrait-rim" d="M394 226 C382 324 289 379 148 433 C98 450 55 392 39 324"/>
+          </svg>
+        </div>
+        -->
+        <div class="hero-portrait">
+          <svg viewBox="0 0 420 470" role="img" aria-labelledby="portrait-title">
+            <title id="portrait-title">Portrait of Rushik Sai Jakka</title>
+            <defs>
+              <clipPath id="portrait-clip"><path d="M34 0 H394 V226 C382 324 289 379 148 433 C98 450 55 392 39 324 C32 278 34 238 34 214 Z"/></clipPath>
+            </defs>
+            <path class="portrait-shape" d="M34 214 C34 145 50 131 115 131 H318 C382 131 402 161 394 226 C382 324 289 379 148 433 C98 450 55 392 39 324 C32 278 34 238 34 214 Z"/>
+            <image href="./rushik-portrait.png" x="0" y="0" width="420" height="630" preserveAspectRatio="xMidYMin meet" clip-path="url(#portrait-clip)"/>
+            <path class="portrait-rim" d="M394 226 C382 324 289 379 148 433 C98 450 55 392 39 324"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+  <section class="about-section" id="about-section">
+    <div class="about-wrapper">
+      <h2 class="section-title" data-i18n="about-title">About me: Building Intelligent Robotic Systems</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-i18n="about-p1">
+            I am currently pursuing my Master's in Control, Microelectronics and Microsystems at the
+            University of Bremen, with a focus on robotics, embedded systems, and computer vision.
+          </p>
+          <p data-i18n="about-p2">
+            My work combines ROS 2, computer vision, sensor integration, and robotic control systems.
+            I enjoy building systems that bridge hardware and intelligent software for real-world automation.
+          </p>
+          <p data-i18n="about-p3">
+            At Yardstick Robotics, I work on 2-DOF and 6-DOF robotic arms. My experience also spans
+            mobile robotics and a pan-tilt sensor head for robotic perception and gaze estimation.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-text" data-i18n="stat-text-1">Robotics Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">ROS 2</span>
+            <span class="stat-text" data-i18n="stat-text-2">Jazzy &amp; Humble</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">CV</span>
+            <span class="stat-text" data-i18n="stat-text-3">OpenCV &amp; Vision</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">DE</span>
+            <span class="stat-text" data-i18n="stat-text-4">Based in Germany</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects-section">
+    <div class="section-card">
+      <div class="projects-section-content">
+        <h2 class="section-title" data-i18n="proj-title">Projects</h2>
+
+        <article class="featured-project" id="project-pan-tilt" aria-labelledby="lab-title">
+        <header class="cinema-intro">
+          <div><p class="lab-label" data-i18n="lab-eyebrow">01 / Master Project · 2 DOF</p><h3 id="lab-title" data-i18n="lab-title">Pan-Tilt Robotic Head</h3></div>
+          <a href="#prototype-details" data-i18n="cinema-details-link">Project details ↗</a>
+        </header>
+        <section class="robot-cinema" id="motion-lab" aria-labelledby="lab-title">
+          <div class="cinema-stage">
+            <img class="cinema-fallback" src="./Pan_tilt.jpeg" alt="The physical pan-tilt sensor head with its blue L-shaped support" loading="lazy">
+            <canvas id="robot-cinema" aria-hidden="true"></canvas>
+            <div class="cinema-topline"><span>ROS 2 · Fusion 360 · Dynamixel</span><span data-i18n="cinema-scroll">Scroll to explore ↓</span></div>
+            <div class="cinema-captions">
+              <div class="cinema-caption is-active"><small>01 / RGB-D</small><h4 data-i18n="cinema-lens-title">Start at the sensor.</h4><p data-i18n="cinema-lens-text">An Intel RealSense D455f brings depth into the picture.</p></div>
+              <div class="cinema-caption" aria-hidden="true"><small data-i18n="cinema-camera-label">02 / PERCEPTION</small><h4 data-i18n="cinema-camera-title">A moving point of view.</h4><p data-i18n="cinema-camera-text">The camera sits at the end of a two-axis robotic head.</p></div>
+              <div class="cinema-caption" aria-hidden="true"><small>03 / PAN &amp; TILT</small><h4 data-i18n="cinema-head-title">See the whole mechanism.</h4><p data-i18n="cinema-head-text">A pan actuator at the base. A tilt actuator at the camera.</p></div>
+              <div class="cinema-caption" aria-hidden="true"><small data-i18n="cinema-structure-label">04 / STRUCTURE</small><h4 data-i18n="cinema-structure-title">Around the other side.</h4><p data-i18n="cinema-structure-text">The L-shaped support connects sensing, actuation and the fixed base.</p></div>
+            </div>
+            <div class="cinema-bottom"><div class="cinema-chapters" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div><a href="#prototype-details" data-i18n="cinema-skip">See the real prototype ↓</a></div>
+            <div class="cinema-progress" aria-hidden="true"></div>
+          </div>
+        </section>
+        <div class="prototype-details" id="prototype-details">
+          <figure><img src="./Pan_tilt.jpeg" alt="Actual pan-tilt prototype: blue L-shaped support, pan motor at the base and camera-side tilt motor" loading="lazy"><figcaption data-i18n="prototype-caption">The physical prototype</figcaption></figure>
+          <div class="prototype-copy">
+            <h4 data-i18n="cinema-project-title">From CAD to the workbench.</h4>
+            <p data-i18n="proj-desc-pantilt">Developing a 2-DOF pan-tilt sensor head for gaze estimation, using ROS 2, Fusion 360, Dynamixel actuators and an Intel RealSense D455f.</p>
+            <div class="master-tags"><span>ROS 2</span><span>Fusion 360</span><span>Dynamixel</span><span>RealSense D455f</span></div>
+            <a href="#experience-3" data-i18n="cinema-role">My work on this project ↗</a>
+            <p class="cinema-note" data-i18n="cinema-note">Scroll view: an illustration of the prototype. The photograph and CAD parts show the actual hardware.</p>
+          </div>
+        </div>
+
+        <div class="projects-subsection cad-subsection" id="cad-parts">
+          <div class="subsection-header">
+            <span class="subsection-icon"><i data-lucide="box"></i></span>
+            <h4 class="subsection-title" data-i18n="proj-label-cad">CAD &amp; STEP</h4>
+          </div>
+
+          <div class="projects-grid cad-mini-grid">
+            <article class="project-card cad-mini-card">
+              <div class="project-image cad-mini-image">
+                <img loading="lazy" src="./T_plate_preview.jpeg" alt="T plate preview" />
+              </div>
+
+              <div class="project-content cad-mini-content">
+<div class="cad-mini-actions">
+                  <button
+                    class="btn cad-mini-btn js-open-cad"
+                    data-title="T Plate Mount" aria-label="View CAD: T Plate Mount"
+                    data-title-de="T-Platte Halterung"
+                    data-model="./T_plate.glb"
+                    data-poster="./T_plate_preview.jpeg"
+                    data-description="Interactive 3D view of the T plate mount."
+                    data-description-de="Interaktive 3D-Ansicht der T-Platte."
+                    data-orbit="35deg 70deg 105%"
+                    data-fov="30deg">
+                    <span data-i18n="cad-btn-view">CAD</span>
+                  </button>
+
+                  <a href="./T_plate.step" class="btn cad-mini-btn secondary-btn" target="_blank" rel="noopener noreferrer">STEP</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card cad-mini-card">
+              <div class="project-image cad-mini-image">
+                <img loading="lazy" src="./Camera_mounting_Plate.jpeg" alt="XM430 bracket preview" />
+              </div>
+
+              <div class="project-content cad-mini-content">
+<div class="cad-mini-actions">
+                  <button
+                    class="btn cad-mini-btn js-open-cad"
+                    data-title="XM430 Bracket" aria-label="View CAD: XM430 Bracket"
+                    data-title-de="XM430 Halterung"
+                    data-model="./Camera2Ubracket_V2.glb"
+                    data-poster="./Camera_mounting_Plate.jpeg"
+                    data-description="Interactive 3D preview of the XM430 bracket."
+                    data-description-de="Interaktive 3D-Vorschau der XM430-Halterung."
+                    data-orbit="30deg 75deg 105%"
+                    data-fov="28deg">
+                    <span data-i18n="cad-btn-view">CAD</span>
+                  </button>
+
+                  <a href="./Camera2Ubracket_V2.step" class="btn cad-mini-btn secondary-btn" target="_blank" rel="noopener noreferrer">STEP</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card cad-mini-card">
+              <div class="project-image cad-mini-image">
+                <img loading="lazy" src="./Motor_Plate_Final_V5.jpeg" alt="Motor plate preview" />
+              </div>
+
+              <div class="project-content cad-mini-content">
+<div class="cad-mini-actions">
+                  <button
+                    class="btn cad-mini-btn js-open-cad"
+                    data-title="Motor Plate Final" aria-label="View CAD: Motor Plate Final"
+                    data-title-de="Motorplatte Final"
+                    data-model="./Motor_Plate_Final.glb"
+                    data-poster="./Motor_Plate_Final_V5.jpeg"
+                    data-description="Interactive 3D preview of the motor plate."
+                    data-description-de="Interaktive 3D-Vorschau der Motorplatte."
+                    data-orbit="30deg 75deg 105%"
+                    data-fov="28deg">
+                    <span data-i18n="cad-btn-view">CAD</span>
+                  </button>
+
+                  <a href="./Motor_Plate_Final.step" class="btn cad-mini-btn secondary-btn" target="_blank" rel="noopener noreferrer">STEP</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card cad-mini-card">
+              <div class="project-image cad-mini-image">
+                <img loading="lazy" src="./L_extension_New.jpeg" alt="L extension preview" />
+              </div>
+
+              <div class="project-content cad-mini-content">
+<div class="cad-mini-actions">
+                  <button
+                    class="btn cad-mini-btn js-open-cad"
+                    data-title="L Extension" aria-label="View CAD: L Extension"
+                    data-title-de="L-Verlängerung"
+                    data-model="./L_extension_New.glb"
+                    data-poster="./L_extension_New.jpeg"
+                    data-description="Interactive 3D preview of the L extension bracket."
+                    data-description-de="Interaktive 3D-Vorschau der L-Verlängerungshalterung."
+                    data-orbit="30deg 75deg 105%"
+                    data-fov="28deg">
+                    <span data-i18n="cad-btn-view">CAD</span>
+                  </button>
+
+                  <a href="./L_extension_New.step" class="btn cad-mini-btn secondary-btn" target="_blank" rel="noopener noreferrer">STEP</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        </article>
+
+        <article class="featured-project" id="project-delivery" aria-labelledby="delivery-title">
+          <div class="cinema-intro">
+            <div><p class="lab-label" data-i18n="delivery-label">02 / Mobile Robotics · ROS 2</p><h3 id="delivery-title" data-i18n="proj-title-delivery">Autonomous Delivery Robot</h3></div>
+            <a href="#delivery-details" data-i18n="delivery-recording">Watch the project recording ↗</a>
+          </div>
+          <section class="robot-cinema delivery-cinema" id="delivery-lab" aria-labelledby="delivery-title">
+            <div class="cinema-stage">
+              <img class="cinema-fallback" src="./assets/delivery-door-poster.svg" alt="Illustrated TurtleBot moving through an open doorway, with an obstacle ahead" />
+              <canvas id="delivery-cinema" aria-hidden="true"></canvas>
+              <div class="cinema-topline"><span>ROS 2 · LiDAR · Gazebo</span><span data-i18n="cinema-scroll">Scroll to explore</span></div>
+              <div class="cinema-captions">
+                <div class="cinema-caption is-active"><small data-i18n="delivery-wait-label">01 / SENSE</small><h4 data-i18n="delivery-wait-title">A closed door. A waiting robot.</h4><p data-i18n="delivery-wait-text">LiDAR sees the door ahead. The TurtleBot stays still.</p></div>
+                <div class="cinema-caption" aria-hidden="true"><small data-i18n="delivery-open-label">02 / DETECT</small><h4 data-i18n="delivery-open-title">The way opens.</h4><p data-i18n="delivery-open-text">As the door swings away, the scan reveals a clear path through.</p></div>
+                <div class="cinema-caption" aria-hidden="true"><small data-i18n="delivery-move-label">03 / MOVE</small><h4 data-i18n="delivery-move-title">Through the doorway.</h4><p data-i18n="delivery-move-text">The robot moves forward, checking the space ahead with LiDAR.</p></div>
+                <div class="cinema-caption" aria-hidden="true"><small data-i18n="delivery-stop-label">04 / STOP</small><h4 data-i18n="delivery-stop-title">An obstacle. A reason to stop.</h4><p data-i18n="delivery-stop-text">LiDAR detects an obstacle ahead. The robot stops with space to spare.</p></div>
+              </div>
+              <div class="cinema-bottom"><div class="cinema-chapters" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div><a href="#delivery-details" data-i18n="delivery-watch">Watch recording ↗</a></div>
+              <div class="cinema-progress" aria-hidden="true"></div>
+            </div>
+          </section>
+          <p class="delivery-note" data-i18n="delivery-note">An illustrated walkthrough of the behaviour. The project recording and ROS 2 implementation are below.</p>
+          <div class="projects-grid">
+            <div class="project-card" id="delivery-details">
+              <div class="project-image">
+                <div class="video-responsive">
+                  <iframe loading="lazy"
+                    src="https://www.youtube.com/embed/6ao7w6dNs8w"
+                    title="YouTube video player for Autonomous Delivery Robot"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <div class="project-header">
+                  <h4 class="project-title" data-i18n="delivery-evidence">Project recording &amp; implementation</h4>
+                  <a href="https://github.com/rushiksai/ros-2/tree/main/rpwr-assignments/internship/group5_ws" target="_blank" rel="noopener noreferrer" class="github-icon-link" aria-label="GitHub – Autonomous Delivery Robot">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+                <div class="tools-used">
+                  <span class="tool-btn">ROS 2</span>
+                  <span class="tool-btn">Python</span>
+                  <span class="tool-btn">LiDAR</span>
+                  <span class="tool-btn">Gazebo</span>
+                  <span class="tool-btn">RViz</span>
+                  <span class="tool-btn">rosbag2 / MCAP</span>
+                </div>
+                <p class="project-description" data-i18n="proj-desc-delivery">
+                  A TurtleBot door-passage project using ROS 2, LiDAR and Gazebo. The walkthrough shows the robot waiting for an open door, moving through, and stopping when LiDAR detects an obstacle.
+                </p>
+                <a class="project-text-link" href="https://github.com/rushiksai/ros-2/blob/main/rpwr-assignments/internship/group5_ws/scripts/analyze_door.py" target="_blank" rel="noopener noreferrer" data-i18n="delivery-bag">Explore the /scan bag-analysis script ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <section class="projects-subsection more-projects" aria-labelledby="more-projects-title">
+          <div class="subsection-header"><h3 class="subsection-title" id="more-projects-title" data-i18n="proj-more">More robotics &amp; vision</h3></div>
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-image arm-card-art six-dof-art" aria-hidden="true"><svg viewBox="0 0 400 200"><path class="art-guide" d="M20 170H380 M200 10V185 M60 160L340 40"/><path class="art-base" d="M95 152L159 152L173 178L81 178Z"/><path class="art-arm" d="M127 151L127 117L180 38L235 70L267 105L293 86"/><g class="art-joints"><circle cx="127" cy="151" r="13"/><circle cx="127" cy="117" r="14"/><circle cx="180" cy="38" r="15"/><circle cx="235" cy="70" r="12"/><circle cx="267" cy="105" r="10"/><circle cx="293" cy="86" r="8"/></g><path class="art-grip" d="M292 76L309 63L323 65 M302 88L319 75L321 61"/></svg><strong>6<span>DOF</span></strong></div>
+              <div class="project-content"><p class="project-context" data-i18n="proj-work">Yardstick Robotics</p><h4 class="project-title" data-i18n="proj-title-6dof">6-DOF motion &amp; dynamics</h4><p class="project-description" data-i18n="proj-desc-6dof">Working with the control team on gravity compensation, friction analysis, and controller tuning for a 6-DOF arm.</p><div class="tools-used"><span class="tool-btn">C++ / Python</span><span class="tool-btn">Dynamics</span><span class="tool-btn">ROS 2</span></div><a class="project-text-link" href="#experience"><span data-i18n="proj-experience">Explore my role</span> ↗</a></div>
+            </article>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img loading="lazy" src="./turtle_bot.png" alt="ROS 2 multi-agent tracking simulation" />
+              </div>
+              <div class="project-content">
+                <p class="project-context" data-i18n="proj-context-tracking">ROS 2 · Multi-agent coordination</p>
+                <div class="project-header">
+                  <h4 class="project-title" data-i18n="proj-title-turtlebot">ROS 2 Multi-Agent Tracking</h4>
+                  <a href="https://github.com/rushiksai/ros-2/tree/main/rpwr-assignments/03_ros" target="_blank" rel="noopener noreferrer" class="github-icon-link" aria-label="GitHub – ROS 2 multi-agent tracking">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+                <div class="tools-used">
+                  <span class="tool-btn">ROS 2</span>
+                  <span class="tool-btn">Turtlesim</span>
+                  <span class="tool-btn">Python</span>
+                  <span class="tool-btn">tf2_ros</span>
+                </div>
+                <p class="project-description" data-i18n="proj-desc-turtlebot">
+                  ROS 2 turtlesim project for multi-agent tracking using broadcaster and follower nodes with tf-based coordination.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image">
+                <img loading="lazy" src="./CV_C.png" alt="OpenCV Image Processing" style="object-position: center;" />
+              </div>
+              <div class="project-content">
+                <p class="project-context" data-i18n="proj-context-vision">Computer vision</p>
+                <div class="project-header">
+                  <h4 class="project-title" data-i18n="proj-title-opencv">OpenCV Image Processing</h4>
+                </div>
+                <div class="tools-used">
+                  <span class="tool-btn">Python</span>
+                  <span class="tool-btn">OpenCV</span>
+                  <span class="tool-btn">NumPy</span>
+                  <span class="tool-btn">Computer Vision</span>
+                </div>
+                <p class="project-description" data-i18n="proj-desc-opencv">
+                  OpenCV and Python image-processing workflows for feature detection, segmentation, and engineering measurement tasks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cad-modal" id="cadModal" aria-hidden="true" inert>
+    <div class="cad-modal-backdrop js-close-cad"></div>
+
+    <div class="cad-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cadModalTitle">
+      <button type="button" class="cad-modal-close js-close-cad" aria-label="Close CAD viewer">×</button>
+
+      <div class="cad-modal-content">
+        <div class="cad-modal-info">
+          <h3 id="cadModalTitle">CAD Model</h3>
+          <p id="cadModalDesc">Interactive 3D viewer.</p>
+        </div>
+
+        <div class="cad-viewer-wrap">
+          <model-viewer
+            id="cadViewer"
+            alt="3D CAD model viewer"
+            camera-controls
+            auto-rotate
+            shadow-intensity="1"
+            exposure="1"
+            environment-image="neutral"
+            interaction-prompt="auto"
+            camera-orbit="35deg 70deg 105%"
+            field-of-view="30deg">
+          </model-viewer>
+        </div>
+
+        <p class="cad-status" id="cadStatus">Ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="experience-section experience-journey" id="experience" aria-labelledby="experience-title">
+    <div class="experience-wrap">
+      <div class="experience-heading">
+        <h2 class="section-title" id="experience-title" data-i18n="exp-title">Experience</h2>
+        <p class="experience-hint" hidden>Scroll through my experience <span aria-hidden="true">↓</span></p>
+      </div>
+      <div class="experience-layout">
+        <div class="experience-entries">
+          <article class="experience-entry" id="experience-1" data-name-en="Yardstick Robotics" data-name-de="Yardstick Robotics" aria-labelledby="experience-role-1">
+            <div class="experience-meta"><span class="experience-date">09/2026 – Present</span><span>Werkstudent</span><span class="experience-number">01 / 05</span></div>
+            <h3 id="experience-role-1" class="experience-role">Working Student – Robot Control Software</h3>
+            <p class="experience-org">Rheinmetall Yardstick Robotics GmbH · Bremen, Germany</p>
+            <details class="role-details" open><summary data-i18n="role-details">Responsibilities &amp; tools</summary><ul class="experience-bullets"><li>
+          <strong>Robotics Software Development:</strong>
+          Develop, test, and maintain ROS 2-based software modules for robotic manipulators,
+          including component testing, debugging, and implementation of new functions in
+          motion-planning and control pipelines.
+        </li>
+
+        <li>
+          <strong>6-DOF Arm Control:</strong>
+          Work with the control engineering team on gravity compensation and friction analysis
+          for a 6-DOF robotic arm; tune controller and compensation parameters to improve
+          motion behaviour and compensate gravity-induced joint torques.
+        </li>
+
+        <li>
+          <strong>Robot Dynamics &amp; Control:</strong>
+          Analyse the relationship between gravity torques, friction, and joint behaviour,
+          applying these concepts during robot tuning under guidance from experienced
+          control engineers.
+        </li>
+
+        <li>
+          <strong>MDH Modelling &amp; Kinematics:</strong>
+          Define Modified Denavit–Hartenberg (MDH) parameters for a new robotic platform and
+          develop the corresponding forward kinematics, inverse kinematics, and analytical
+          Jacobian formulation.
+        </li>
+
+        <li>
+          <strong>Internal Analysis Tools:</strong>
+          Create and improve internal C++ and Python tools for data analysis, visualisation,
+          logging, trajectory processing, and system-performance monitoring.
+        </li>
+
+        <li>
+          <strong>Software Quality &amp; Infrastructure:</strong>
+          Support documentation, software testing, CI/CD workflows, debugging, and robustness
+          improvements for ROS 2 packages and control components.
+        </li></ul>
+            <div class="experience-tags"><span>ROS 2</span><span>C++</span><span>Python</span><span>Robot Control</span><span>Robot Dynamics</span><span>2-DOF Manipulator</span><span>6-DOF Manipulator</span><span>Gravity Compensation</span><span>Friction Modelling</span><span>MDH Parameters</span><span>Forward Kinematics</span><span>Inverse Kinematics</span><span>Jacobians</span><span>CI/CD</span><span>Software Testing</span></div></details>
+          </article>
+          <article class="experience-entry" id="experience-2" data-name-en="BIMAQ · Bremen" data-name-de="BIMAQ · Bremen" aria-labelledby="experience-role-2">
+            <div class="experience-meta"><span class="experience-date">01/2026 – 08/2026</span><span>HiWi</span><span class="experience-number">02 / 05</span></div>
+            <h3 id="experience-role-2" class="experience-role" data-i18n="exp-role-hiwi">Student Assistant – Computer Vision Engineer</h3>
+            <p class="experience-org">BIMAQ · Department 04 Production Engineering · University of Bremen</p>
+            <details class="role-details"><summary data-i18n="role-details">Responsibilities &amp; tools</summary><ul class="experience-bullets" data-i18n-html="exp-bullets-hiwi"><li>
+              <strong>Computer Vision &amp; Image Processing:</strong>
+              Developed and evaluated Python/OpenCV-based workflows for pixel detection,
+              edge detection, thresholding, and subpixel analysis in optical measurement tasks.
+            </li>
+            <li>
+              <strong>Camera Calibration:</strong>
+              Supported the development and validation of camera-calibration models to enable
+              reliable extraction and analysis of information from newly captured images.
+            </li>
+            <li>
+              <strong>Laser Triangulation Systems:</strong>
+              Implemented programming tasks for laser-triangulation geometry measurement systems
+              and created scripts for analysis and experimental environments.
+            </li>
+            <li>
+              <strong>Measurement &amp; Experiment Support:</strong>
+              Assisted with field measurements, laboratory experiments, sensor setup,
+              data preparation, and systematic documentation of results.
+            </li>
+            <li>
+              <strong>Research &amp; Data Management:</strong>
+              Conducted literature research and worked with structured data storage and processing
+              using SQLite.
+            </li>
+            <li>
+              <strong>UAV Support:</strong>
+              Supported drone-flight activities and the acquisition of image data for
+              computer-vision-related measurement tasks.
+            </li></ul>
+            <div class="experience-tags"><span>OpenCV</span><span>Python</span><span>SQLite</span><span>Camera Calibration</span><span>Subpixel Analysis</span><span>Edge Detection</span><span>Laser Triangulation</span><span>Optical Metrology</span><span>UAV</span><span>Data Analysis</span></div></details>
+          </article>
+          <article class="experience-entry" id="experience-3" data-name-en="Pan-tilt master project" data-name-de="Pan-Tilt-Masterprojekt" aria-labelledby="experience-role-3">
+            <div class="experience-meta"><span class="experience-date">11/2025 – Present</span><span data-i18n="chip-masterprojekt">Master Project</span><span class="experience-number">03 / 05</span></div>
+            <h3 id="experience-role-3" class="experience-role" data-i18n="exp-role-pantilt">Pan-Tilt Robotic Head for Gaze Estimation</h3>
+            <p class="experience-org">Dept. 03 Mathematics &amp; Informatics · University of Bremen</p>
+            <details class="role-details"><summary data-i18n="role-details">Responsibilities &amp; tools</summary><ul class="experience-bullets" data-i18n-html="exp-bullets-pantilt"><li>
+              <strong>Robot Programming:</strong>
+              Programming a 2-DOF pan-tilt robotic sensor head using ROS 2 nodes for real-time
+              sensor processing, coordinate transformations, and actuation control.
+            </li>
+            <li>
+              <strong>Mechanical Design:</strong>
+              Designing and modelling platform components in Fusion 360 for iterative prototyping
+              and part fabrication.
+            </li>
+            <li>
+              <strong>Hardware Assembly:</strong>
+              Assembling and configuring the 2-DOF platform with Dynamixel XM430-W350-R servo
+              actuators and integrating all electrical connections.
+            </li>
+            <li>
+              <strong>Sensor Integration:</strong>
+              Integrating the Intel RealSense D455f depth camera for real-time RGB-D data
+              acquisition within the ROS 2 ecosystem.
+            </li>
+            <li>
+              <strong>Simulation &amp; Visualisation:</strong>
+              Simulated and validated platform behaviour in Gazebo; monitored real-time joint
+              states and TF transforms in RViz prior to physical deployment.
+            </li></ul>
+            <div class="experience-tags"><span>ROS 2</span><span>Fusion 360</span><span>Dynamixel</span><span>Intel RealSense</span><span>URDF</span><span>Gazebo</span><span>RViz</span></div></details>
+          </article>
+          <article class="experience-entry" id="experience-4" data-name-en="M.Sc. coursework" data-name-de="M.Sc. Studieninhalte" aria-labelledby="experience-role-4">
+            <div class="experience-meta"><span class="experience-date">2024 – Present</span><span data-i18n="exp-label-coursework">Current Coursework</span><span class="experience-number">04 / 05</span></div>
+            <h3 id="experience-role-4" class="experience-role" data-i18n="exp-role-coursework">M.Sc. – Control, Microelectronics &amp; Microsystems</h3>
+            <p class="experience-org">University of Bremen</p>
+            <details class="role-details"><summary data-i18n="role-details">Responsibilities &amp; tools</summary><ul class="experience-bullets" data-i18n-html="exp-bullets-coursework"><li>
+              <strong>Intelligent Systems for Marine Robotics</strong>
+              — Autonomy, sensor fusion, and decision-making for underwater robotic platforms.
+            </li>
+            <li>
+              <strong>Software Engineering for Cognitive Robotics</strong>
+              — Architecture patterns, ROS-based design, and cognitive system integration.
+            </li>
+            <li>
+              <strong>Architecture &amp; Design Methodologies for Deep Learning</strong>
+              — Hardware-aware DL model design, accelerator architectures, and deployment pipelines.
+            </li></ul>
+            <div class="experience-tags"></div></details>
+          </article>
+          <article class="experience-entry" id="experience-5" data-name-en="IEEE student branch" data-name-de="IEEE Student Branch" aria-labelledby="experience-role-5">
+            <div class="experience-meta"><span class="experience-date">08/2022 – 08/2023</span><span data-i18n="chip-volunteer">Volunteer</span><span class="experience-number">05 / 05</span></div>
+            <h3 id="experience-role-5" class="experience-role" data-i18n="exp-role-ieee">Student Branch Chair – IEEE</h3>
+            <p class="experience-org">VNRVJIET · Hyderabad, India</p>
+            <details class="role-details"><summary data-i18n="role-details">Responsibilities &amp; tools</summary><ul class="experience-bullets" data-i18n-html="exp-bullets-ieee"><li>
+              <strong>Interdisciplinary Leadership:</strong>
+              Led technical symposiums and international conferences (ICMACC'22);
+              coordinated between engineering departments.
+            </li>
+            <li>
+              <strong>Strategic Initiative:</strong>
+              Founded the IEEE Robotics &amp; Automation Society (RAS) chapter,
+              managing recruitment and technical roadmaps.
+            </li></ul>
+            <div class="experience-tags"></div></details>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="education-section" id="education">
+    <div class="education-section-content">
+      <h2 class="section-title" data-i18n="edu-title">Education</h2>
+
+      <div class="education-grid">
+        <div class="edu-card active-edu">
+          <div class="edu-top">
+            <div class="edu-date">
+              <span>2024 – Present</span>
+            </div>
+            <div class="edu-info">
+              <h3 class="edu-degree" data-i18n="edu-degree-1">M.Sc. – Control, Microelectronics &amp; Microsystems</h3>
+              <div class="edu-university">
+                Universität Bremen
+                <span class="edu-location"> · Germany</span>
+              </div>
+            </div>
+          </div>
+          <div class="edu-focus" data-i18n="edu-focus-1">
+            Focus: Robotics, Embedded Systems, Computer Vision,
+            Deep Learning Accelerators, Cognitive Robotics
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-top">
+            <div class="edu-date">
+              <span>2019 – 2023</span>
+            </div>
+            <div class="edu-info">
+              <h3 class="edu-degree" data-i18n="edu-degree-2">B.Tech – Electronics &amp; Instrumentation Engineering</h3>
+              <div class="edu-university">
+                VNRVJIET
+                <span class="edu-location"> · Hyderabad, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="edu-focus" data-i18n="edu-focus-2">
+            Focus: Sensors, Control Systems, Automation,
+            Instrumentation Engineering, Embedded Electronics
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section" id="skills">
+    <div class="section-card">
+      <div class="skills-section-content">
+        <h2 class="section-title" data-i18n="skills-title">Skills</h2>
+
+        <div class="skills-grid">
+          <div class="skill-category-card">
+            <div class="category-title">
+              <i data-lucide="bot"></i>
+              <h3 data-i18n="skill-cat-1">Robotics &amp; ROS</h3>
+            </div>
+            <div class="tools-list">
+              <span class="tool-btn">ROS 2</span>
+              <span class="tool-btn">Gazebo</span>
+              <span class="tool-btn">RViz</span>
+              <span class="tool-btn">tf2</span>
+              <span class="tool-btn">Navigation Stack</span>
+              <span class="tool-btn">LiDAR</span>
+              <span class="tool-btn">Robotics Control</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="category-title">
+              <i data-lucide="eye"></i>
+              <h3 data-i18n="skill-cat-2">Computer Vision &amp; AI</h3>
+            </div>
+            <div class="tools-list">
+              <span class="tool-btn">OpenCV</span>
+              <span class="tool-btn">Image Processing</span>
+              <span class="tool-btn">3D Reconstruction</span>
+              <span class="tool-btn">Feature Detection</span>
+              <span class="tool-btn">Calibration Algorithms</span>
+              <span class="tool-btn">Deep Learning (Basics)</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="category-title">
+              <i data-lucide="code"></i>
+              <h3 data-i18n="skill-cat-3">Programming</h3>
+            </div>
+            <div class="tools-list">
+              <span class="tool-btn">Python</span>
+              <span class="tool-btn">C++ (ROS)</span>
+              <span class="tool-btn">MATLAB</span>
+              <span class="tool-btn">Data Analysis (Pandas)</span>
+              <span class="tool-btn">Front End</span>
+              <span class="tool-btn">LaTeX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="languages-section" id="languages" aria-labelledby="languages-title">
+    <div class="languages-wrapper">
+      <h2 class="section-title" id="languages-title" data-i18n="lang-title">Languages</h2>
+      <div class="language-maps">
+        <article class="language-map-card">
+          <div class="language-map-scene">
+            <img class="language-map-art" src="./assets/language-uk.svg" alt="United Kingdom" width="280" height="230" loading="lazy" />
+            <button class="language-pin" type="button" style="--pin-x:57%;--pin-y:58%" aria-labelledby="language-name-en" aria-describedby="language-level-en" aria-expanded="false" aria-controls="language-level-en">
+              <span class="pin-flag" aria-hidden="true">🇬🇧</span>
+              <span class="language-level" id="language-level-en" data-i18n="lang-en-level">B2 — Professional</span>
+            </button>
+          </div>
+          <h3 id="language-name-en" data-i18n="lang-en">English</h3>
+          <p class="language-region" data-i18n="lang-en-region">United Kingdom</p>
+        </article>
+        <article class="language-map-card">
+          <div class="language-map-scene">
+            <img class="language-map-art" src="./assets/language-de.svg" alt="Germany" width="280" height="230" loading="lazy" />
+            <button class="language-pin" type="button" style="--pin-x:52%;--pin-y:49%" aria-labelledby="language-name-de" aria-describedby="language-level-de" aria-expanded="false" aria-controls="language-level-de">
+              <span class="pin-flag" aria-hidden="true">🇩🇪</span>
+              <span class="language-level" id="language-level-de" data-i18n="lang-de-level">B1 — Intermediate</span>
+            </button>
+          </div>
+          <h3 id="language-name-de" data-i18n="lang-de">German</h3>
+          <p class="language-region" data-i18n="lang-de-region">Germany</p>
+        </article>
+        <article class="language-map-card">
+          <div class="language-map-scene">
+            <img class="language-map-art" src="./assets/language-in.svg" alt="India" width="280" height="230" loading="lazy" />
+            <button class="language-pin" type="button" style="--pin-x:50%;--pin-y:50%" aria-labelledby="language-name-hi" aria-describedby="language-level-hi" aria-expanded="false" aria-controls="language-level-hi">
+              <span class="pin-flag" aria-hidden="true">🇮🇳</span>
+              <span class="language-level" id="language-level-hi" data-i18n="lang-hi-level">A1 — Basic</span>
+            </button>
+          </div>
+          <h3 id="language-name-hi" data-i18n="lang-hi">Hindi</h3>
+          <p class="language-region" data-i18n="lang-hi-region">India</p>
+        </article>
+        <article class="language-map-card">
+          <div class="language-map-scene">
+            <img class="language-map-art" src="./assets/language-te.svg" alt="Andhra Pradesh & Telangana" width="280" height="230" loading="lazy" />
+            <button class="language-pin" type="button" style="--pin-x:50%;--pin-y:49%" aria-labelledby="language-name-te" aria-describedby="language-level-te" aria-expanded="false" aria-controls="language-level-te">
+              <span class="pin-flag" aria-hidden="true">🇮🇳</span>
+              <span class="language-level" id="language-level-te" data-i18n="lang-te-level">Native</span>
+            </button>
+          </div>
+          <h3 id="language-name-te" data-i18n="lang-te">Telugu</h3>
+          <p class="language-region" data-i18n="lang-te-region">Andhra Pradesh & Telangana</p>
+        </article>
+      </div>
+      <p class="language-hint" data-i18n="lang-map-hint">Hover over a map or tap its flag to see my level.</p>
+      <p class="map-credits">Maps: <a href="https://surveyofindia.gov.in/pages/outline-maps-of-india" target="_blank" rel="noopener noreferrer">© Survey of India</a> · <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a> · <a href="https://github.com/datameet/maps" target="_blank" rel="noopener noreferrer">DataMeet</a> / <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries</a> (<a href="https://creativecommons.org/licenses/by/2.5/in/" target="_blank" rel="noopener noreferrer">CC BY 2.5 IN</a>, simplified).</p>
+    </div>
+  </section>
+
+  <section class="connect-section" id="contact">
+    <div class="section-card">
+      <div class="connect-content">
+        <h2 class="section-title" data-i18n="connect-title">Connect</h2>
+
+        <div class="contact-row">
+          <a href="https://linkedin.com/in/rushiksaijakka" target="_blank" rel="noopener noreferrer" class="contact-inline-link">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="tel:+4915215479007" class="contact-inline-link">
+            <i data-lucide="phone"></i>
+            <span>+49 15215479007</span>
+          </a>
+
+          <a href="https://github.com/rushiksai" target="_blank" rel="noopener noreferrer" class="contact-inline-link">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+
+          <a href="mailto:rushiksaiyadav@gmail.com" class="contact-inline-link">
+            <i data-lucide="mail"></i>
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+  <footer class="site-footer">© 2026 Rushik Sai Jakka</footer>
+</body>
+</html>

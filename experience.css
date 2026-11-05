@@ -1,0 +1,34 @@
+/* A single document scroll moves the text and drives the adjacent spring. */
+html, body { overflow-x: clip; }
+.experience-journey { --spring-panel: #0b1d3a; --spring-line: #29466e; --spring-wire: #477cbf; --spring-sticky-top: 96px; padding: 80px 24px; overflow: visible; color: var(--text-main); }
+.experience-journey::before, .experience-journey::after { display: none; }
+html[data-theme="light"] .experience-journey { --spring-panel: #fff; --spring-line: #ccdaee; --spring-wire: #628fc7; }
+.experience-wrap { max-width: 1240px; margin: auto; }
+.experience-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+.experience-heading .section-title { margin: 0; font-size: 2.2rem; }
+.experience-hint { color: var(--text-soft); font-size: .85rem; }
+.experience-hint span { margin-left: 14px; color: var(--accent); }
+.experience-layout { display: block; }
+.experience-entries { min-width: 0; }
+.experience-entry { position: relative; padding: 28px; margin-bottom: 30px; border: 1px solid var(--spring-line); border-radius: 16px; background: var(--spring-panel); overflow: visible; scroll-margin-top: 110px; }
+.experience-entry:last-child { margin-bottom: 0; }
+.experience-entry.is-active { border-color: var(--accent); }
+.experience-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 20px; color: var(--text-soft); font-size: .72rem; line-height: 1.6; }
+.experience-date { color: var(--accent); font-weight: 500; }
+.experience-number { margin-left: auto; font-variant-numeric: tabular-nums; }
+.experience-role { font-size: 1.4rem; line-height: 1.4; margin: 0 0 12px; color: var(--text-main); font-weight: 600; }
+.experience-org { color: var(--text-soft); font-size: .83rem; line-height: 1.65; margin: 0 0 22px; }
+.experience-bullets { padding-left: 18px; margin: 0; font-size: .9rem; line-height: 1.7; color: var(--text-soft); }
+.experience-bullets li { padding-left: 3px; margin-bottom: 14px; }
+.experience-bullets li::marker { color: var(--accent); }
+.experience-bullets strong { color: var(--text-main); font-weight: 500; }
+.experience-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
+.experience-tags:empty { display: none; }
+.experience-tags span { border: 1px solid var(--spring-line); border-radius: 5px; padding: 5px 8px; color: var(--text-soft); font-size: .68rem; }
+/* Natural card heights remove padding-only panels; the page owns the scroll. */
+.experience-entries { position: relative; max-width: 900px; margin: auto; }
+.experience-entry { min-height: 0; margin-bottom: 44px; padding: 32px 38px; }
+.experience-journey.has-orbit .experience-entries { perspective: 1300px; }
+.experience-journey.has-orbit .experience-entry { transform-origin: 50% 50%; backface-visibility: hidden; will-change: transform; }
+@media (max-width: 800px) { .experience-journey { padding: 60px 20px; } .experience-heading .section-title { font-size: 2rem; } .experience-entry { padding: 22px; } .experience-role { font-size: 1.2rem; } }
+@media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } }

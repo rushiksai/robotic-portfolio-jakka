@@ -1,0 +1,22 @@
+<!doctype html><html><meta charset="utf-8"><title>Rendered robotic arm loop</title><style>body{margin:0;background:#071230}canvas{display:block;width:100%;height:auto}</style><canvas width="1280" height="720"></canvas><script>
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d');
+const add=(a,b)=>a.map((v,i)=>v+b[i]),sub=(a,b)=>a.map((v,i)=>v-b[i]),mul=(a,s)=>a.map(v=>v*s);
+const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm=a=>mul(a,1/Math.hypot(...a));
+const project=([x,y,z])=>[750+1.3*(.86*x-.52*z),550+1.3*(.26*x-.88*y+.43*z)];
+let faces=[];
+const face=(points,color)=>faces.push({points,color,depth:points.reduce((s,p)=>s+.42*p[0]+.56*p[1]+.75*p[2],0)/points.length});
+const shade=(color,n)=>{const light=.42+.58*Math.max(0,n[0]*-.3+n[1]*.85+n[2]*.5);return `rgb(${color.map(c=>Math.round(c*light)).join(',')})`;};
+function box(c,size,color){const v=[];for(const z of [-1,1])for(const y of [-1,1])for(const x of [-1,1])v.push(add(c,[x*size[0]/2,y*size[1]/2,z*size[2]/2]));[[0,1,3,2],[4,6,7,5],[0,4,5,1],[2,3,7,6],[0,2,6,4],[1,5,7,3]].forEach((ids,i)=>face(ids.map(j=>v[j]),shade(color,[[0,0,-1],[0,0,1],[0,-1,0],[0,1,0],[-1,0,0],[1,0,0]][i])));}
+function cylinder(a,b,r,color){const axis=norm(sub(b,a)),u=norm(cross(axis,Math.abs(axis[1])<.9?[0,1,0]:[1,0,0])),v=cross(axis,u),ring=[];for(let i=0;i<20;i++){const t=i*Math.PI/10;ring.push(add(mul(u,Math.cos(t)*r),mul(v,Math.sin(t)*r)));}for(let i=0;i<20;i++){const j=(i+1)%20;face([add(a,ring[i]),add(a,ring[j]),add(b,ring[j]),add(b,ring[i])],shade(color,norm(add(ring[i],ring[j]))));}face(ring.map(p=>add(a,p)),shade(color,mul(axis,-1)));face(ring.map(p=>add(b,p)),shade(color,axis));}
+function renderArm(seconds){const t=seconds%12/12;faces=[];ctx.clearRect(0,0,1280,720);const bg=ctx.createLinearGradient(0,0,1280,720);bg.addColorStop(0,'#071230');bg.addColorStop(.55,'#102750');bg.addColorStop(1,'#162e55');ctx.fillStyle=bg;ctx.fillRect(0,0,1280,720);
+const floor=ctx.createRadialGradient(770,565,20,770,565,520);floor.addColorStop(0,'#46638b');floor.addColorStop(1,'#0c1c38');ctx.fillStyle=floor;ctx.beginPath();[[180,630],[820,390],[1410,630],[1000,950]].forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill();ctx.fillStyle='#02081670';ctx.beginPath();ctx.ellipse(765,571,195,43,-.1,0,Math.PI*2);ctx.fill();
+const keys=[[0,[-210,190,80]],[.14,[-210,110,80]],[.22,[-210,110,80]],[.36,[-210,230,80]],[.60,[200,230,30]],[.74,[200,110,30]],[.82,[200,110,30]],[1,[-210,190,80]]];let k=0;while(k<keys.length-2&&t>keys[k+1][0])k++;let f=(t-keys[k][0])/(keys[k+1][0]-keys[k][0]);f=f*f*(3-2*f);const w=keys[k][1].map((v,i)=>v+(keys[k+1][1][i]-v)*f);
+const r=Math.hypot(w[0],w[2]),dy=w[1]-90,yaw=Math.atan2(w[2],w[0]),l1=180,l2=170,q2=Math.acos(Math.max(-1,Math.min(1,(r*r+dy*dy-l1*l1-l2*l2)/(2*l1*l2)))),q1=Math.atan2(dy,r)+Math.atan2(l2*Math.sin(q2),l1+l2*Math.cos(q2));const s=[0,90,0],e=[Math.cos(yaw)*l1*Math.cos(q1),90+l1*Math.sin(q1),Math.sin(yaw)*l1*Math.cos(q1)];
+box([0,6,0],[155,12,140],[71,91,121]);cylinder([0,12,0],[0,55,0],59,[46,88,157]);cylinder([0,55,0],[0,89,0],41,[180,199,220]);box([0,89,0],[62,47,60],[63,103,168]);cylinder(s,e,27,[204,218,234]);cylinder(add(s,mul(norm(sub(e,s)),20)),add(s,mul(norm(sub(e,s)),62)),31,[62,110,183]);cylinder(add(e,[-30,0,0]),add(e,[30,0,0]),34,[44,91,161]);cylinder(e,w,21,[210,222,237]);cylinder(add(w,[0,20,0]),add(w,[0,-18,0]),28,[51,102,174]);box(add(w,[0,-30,0]),[58,21,42],[188,208,230]);const held=t>=.2&&t<.78,gap=held?16:26;for(const sign of [-1,1])box(add(w,[sign*gap,-51,0]),[8,30,26],[112,140,171]);
+for(const xz of [[-210,80],[200,30]]){box([xz[0],13,xz[1]],[102,24,93],[90,113,146]);box([xz[0],27,xz[1]],[76,5,67],[122,149,184]);}
+if(t<.2||t>.94)box([-210,45,80],[30,30,30],[107,183,241]);if(held)box(add(w,[0,-65,0]),[30,30,30],[107,183,241]);if(t>=.78&&t<.94)box([200,45,30],[30,30,30],[107,183,241]);
+faces.sort((a,b)=>a.depth-b.depth).forEach(item=>{ctx.beginPath();item.points.map(project).forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fillStyle=item.color;ctx.fill();ctx.strokeStyle='#08142d35';ctx.lineWidth=.5;ctx.stroke();});
+const vignette=ctx.createLinearGradient(0,0,1280,0);vignette.addColorStop(0,'#071230');vignette.addColorStop(.35,'#07123099');vignette.addColorStop(1,'#07123000');ctx.fillStyle=vignette;ctx.fillRect(0,0,1280,720);
+}
+window.renderArm=renderArm;renderArm(0);
+</script></html>
